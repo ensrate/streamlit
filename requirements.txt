@@ -8,3 +8,4 @@ seaborn
 pymysql
 streamlit-aggrid
 streamlit-webrtc
+openai
