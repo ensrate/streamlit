@@ -88,6 +88,16 @@ st.markdown("""
 body {
     font-size: 20px;
 }
+
+.text-input-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -114,7 +124,7 @@ if 'messages' not in st.session_state:
     st.session_state['messages'] = [{'role': 'assistant', 'content': '저는 피부 질환 전문가입니다. 피부에 대해 궁금하신 점을 질문해주세요.'}]
 
 # 대화 입력
-prompt = st.chat_input("메시지 입력")
+prompt = st.text_input("메시지 입력", key="text_input", max_chars=500)
 if prompt:
     st.session_state['messages'].append({'role': 'user', 'content': prompt})
 
